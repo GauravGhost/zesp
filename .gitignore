@@ -1,0 +1,7 @@
+.zesp
+.idea
+.vscode
+log/
+logs/
+node_modules/
+.env
