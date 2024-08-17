@@ -130,30 +130,36 @@ class Zesp {
 
 
 
-program.command('init').action(async () => {
-    const zesp = new Zesp();
-    await zesp.init();
-})
+program.command('init')
+    .action(async () => {
+        const zesp = new Zesp();
+        await zesp.init();
+    })
 
-program.command('add <file>').action(async (file) =>{
-    const zesp = new Zesp();
-    await zesp.add(file);
-});
+program.command('add <file>')
+    .action(async (file) => {
+        const zesp = new Zesp();
+        await zesp.add(file);
+    });
 
-program.command('commit -m <message>').action(async (message) => {
-    const zesp = new Zesp();
-    await zesp.commit(message);
-});
+program.command('commit')
+    .option('-m <message>')
+    .action(async (message) => {
+        const zesp = new Zesp();
+        await zesp.commit(message);
+    });
 
-program.command('log').action(async (commitHash) => {
-    const zesp = new Zesp();
-    await zesp.log();
-});
+program.command('log')
+    .action(async (commitHash) => {
+        const zesp = new Zesp();
+        await zesp.log();
+    });
 
-program.command('show <commitHash>').action(async (commitHash) => {
-    const zesp = new Zesp();
-    await zesp.showCommitDiff(commitHash);
-})
+program.command('show <commitHash>')
+    .action(async (commitHash) => {
+        const zesp = new Zesp();
+        await zesp.showCommitDiff(commitHash);
+    })
 
 
 program.parse(process.argv);
