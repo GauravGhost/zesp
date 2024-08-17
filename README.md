@@ -13,10 +13,10 @@ Welcome to Zesp, a powerful version control system tool for managing and organiz
 
 ## Commands
 - zesp init
-- zesp add <filename>
-- zesp commit -m <message>
+- zesp add filename
+- zesp commit -m message
 - zesp log
-- zesp show <commit_hash>
+- zesp show commit_hash
 
 ## Getting Started
 
