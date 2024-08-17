@@ -78,8 +78,28 @@ class Zesp {
         }
     }
 
-    async showCommitDiff(){
-        
+    async showCommitDiff(commitHash) {
+        const commitData = JSON.parse(await this.getCommitData(commitHash));
+        if (!commitData) {
+            console.log("Commit not found!");
+            return
+        }
+        console.log('Changes in the last commit are: ');
+
+        for(const file of commitData.files){
+            
+        }
+
+    }
+
+    async getCommitData(commitHash) {
+        const commitPath = path.join(this.objectsPath, commitHash)
+        try {
+            return await fs.readFile(commitPath, { encoding: 'utf-8' })
+        } catch (error) {
+            console.error("Failed to read the commit data", error)
+            return null;
+        }
     }
 }
 
