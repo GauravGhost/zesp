@@ -2,7 +2,6 @@
 
 import path from 'path';
 import { promises as fs } from 'fs';
-import { fileURLToPath } from 'url';
 import chalk from 'chalk';
 import { Command } from 'commander'
 import { diffLines } from 'diff';
@@ -11,8 +10,8 @@ import hashObject from './helpers/hashHelper.mjs';
 import { getCommitData, getCurrentHead, getFileContent, getParentFileContent } from './helpers/utils.mjs'
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
+const __dirname = process.cwd();
 const program = new Command();
 
 class Zesp {
