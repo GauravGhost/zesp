@@ -71,13 +71,20 @@ class Zesp {
         let currentCommitHash = await this.getCurrentHead();
         while (currentCommitHash) {
             const commitData = JSON.parse(await fs.readFile(path.join(this.objectsPath, currentCommitHash), { encoding: 'utf-8' }));
+
             console.log(`Commit ${currentCommitHash} \nDate: ${commitData.timeStamp}\n\n${commitData.message}\n\n`);
+
             currentCommitHash = commitData.parent;
         }
+    }
+
+    async showCommitDiff(){
+        
     }
 }
 
 const zesp = new Zesp();
 // await zesp.add('sample.txt');
 // await zesp.commit("updated sample.txt file");
-await zesp.log()
+await zesp.log();
+await zesp.log();
