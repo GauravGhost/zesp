@@ -1,13 +1,17 @@
 {
   "name": "zesp",
   "version": "0.0.1",
-  "description": "",
+  "description": "Version control system for projects",
+  "type": "module",
   "main": "Zesp.mjs",
+  "bin": {
+    "zesp": "./Zesp.mjs"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["version control", "git"],
+  "author": "Gyanendra Kumar",
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.3.0",
