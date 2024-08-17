@@ -1,6 +1,6 @@
 {
   "name": "zesp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Version control system for projects",
   "type": "module",
   "main": "Zesp.mjs",
